@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:label="MGLegacy"
+        android:hasCode="false">
+
+        <!-- FCL finds renderer plugins by looking for this -->
+        <meta-data android:name="fclPlugin" android:value="true" />
+
+        <!-- Format:  DisplayName:GL_library:EGL_library
+             The two library names are a best guess. If the game crashes, this is the first thing to change. -->
+        <meta-data
+            android:name="renderer"
+            android:value="MGLegacy:libSimpleFPEWrapper.so:libmobileglues.so" />
+
+        <meta-data
+            android:name="des"
+            android:value="MGLegacy - SFPEW/MobileGlues + ANGLE" />
+
+        <!-- ENVIRONMENT VARIABLES (optional, format unverified)
+             Copy the exact format from the manifest of the base ANGLE plugin APK,
+             then remove the comment markers around these lines and edit them.
+
+        <meta-data android:name="pojavEnv" android:value="..." />
+        <meta-data android:name="boatEnv" android:value="..." />
+        -->
+
+    </application>
+</manifest>
